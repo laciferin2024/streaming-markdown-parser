@@ -1,0 +1,26 @@
+{
+  "name": "streaming-markdown-parser",
+  "version": "1.0.0",
+  "description": "Task: Make a streaming Markdown parser.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npx tsc --watch",
+    "start": "vite public/ --port 8080",
+    "build": "npx tsc; npm run build:cp-public",
+    "build:cp-public": "cp ./public/** ./dist",
+    "type": "npx tsc --noEmit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anysphere/streaming-markdown-parser.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/anysphere/streaming-markdown-parser/issues"
+  },
+  "homepage": "https://github.com/anysphere/streaming-markdown-parser#readme",
+  "devDependencies": {
+    "typescript": "^5.0.4"
+  }
+}
