@@ -4,7 +4,7 @@
   "description": "Task: Make a streaming Markdown parser.",
   "main": "index.js",
   "scripts": {
-    "dev": "bunx tsc src/ --watch --outDir ./public",
+    "dev": "bunx tsc ./src/MarkdownParser.ts --watch --outDir ./public",
     "start": "vite public/ --port 8080",
     "build": "bunx tsc; npm run build:cp-public",
     "build:cp-public": "cp ./public/** ./dist",
@@ -15,7 +15,7 @@
     "type": "git",
     "url": "git+https://github.com/anysphere/streaming-markdown-parser.git"
   },
-  "author": "",
+  "author": "Hiro <laciferin@gmail.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/anysphere/streaming-markdown-parser/issues"
