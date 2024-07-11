@@ -118,6 +118,9 @@ const mdMap = {
 
 function addToken(token: string) {
   console.log({ token })
+
+  token = token.replace("\n", "<br>")
+
   if (!currentContainer) return
 
   const span = document.createElement("span")
