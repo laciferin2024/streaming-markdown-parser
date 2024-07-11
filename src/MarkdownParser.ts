@@ -97,6 +97,20 @@ enum LineType {
   OL,
 }
 
+// https://markdowntohtml.com/
+
+const mdMap = {
+  "**": "<i>",
+  "*": "<b>",
+  "#": "<h1>",
+  "##": "<h2>",
+  "###": "<h3>",
+  "####": "<h4>",
+
+  "```": "<code>",
+  // TODO: ``: should be <pre></pre>
+}
+
 function addToken(token: string) {
   console.log({ token })
   if (!currentContainer) return
