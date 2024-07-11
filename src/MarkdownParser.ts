@@ -119,7 +119,7 @@ const mdMap = {
 function addToken(token: string) {
   console.log({ token })
 
-  token = token.replace("\n", "<br>")
+  token = token.replace("\n", "<br>") //FAILED: regex is the onnly choice
 
   if (!currentContainer) return
 
