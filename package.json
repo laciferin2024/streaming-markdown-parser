@@ -4,11 +4,12 @@
   "description": "Task: Make a streaming Markdown parser.",
   "main": "index.js",
   "scripts": {
-    "dev": "npx tsc --watch --outDir ./public",
+    "dev": "bunx tsc src/ --watch --outDir ./public",
     "start": "vite public/ --port 8080",
-    "build": "npx tsc; npm run build:cp-public",
+    "build": "bunx tsc; npm run build:cp-public",
     "build:cp-public": "cp ./public/** ./dist",
-    "type": "npx tsc --noEmit"
+    "type": "bunx tsc --noEmit",
+    "clean": "rimraf public/*.js"
   },
   "repository": {
     "type": "git",
@@ -21,6 +22,7 @@
   },
   "homepage": "https://github.com/anysphere/streaming-markdown-parser#readme",
   "devDependencies": {
+    "rimraf": "^6.0.1",
     "typescript": "^5.0.4"
   }
 }
