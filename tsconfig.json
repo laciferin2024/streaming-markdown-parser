@@ -7,6 +7,8 @@
     "target": "ES6",
     "noImplicitAny": true,
     "noImplicitReturns": true,
-    "strict": false
+    "strict": false,
+    "moduleResolution": "NodeNext",
+    "module": "NodeNext"
   }
 }

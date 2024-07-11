@@ -83,7 +83,13 @@ function runStream() {
 this does token streaming with no styling right now
 your job is to write the parsing logic to make the styling work
  */
+// @ts-ignore
+// import { Markdown } from "markdown-to-html"
+
+// let md = new Markdown()
+
 function addToken(token: string) {
+  console.log({ token })
   if (!currentContainer) return
 
   const span = document.createElement("span")
