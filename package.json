@@ -13,14 +13,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/anysphere/streaming-markdown-parser.git"
+    "url": "git+https://github.com/laciferin2024/streaming-markdown-parser.git"
   },
   "author": "Hiro <laciferin@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/anysphere/streaming-markdown-parser/issues"
+    "url": "https://github.com/laciferin2024/streaming-markdown-parser/issues"
   },
-  "homepage": "https://github.com/anysphere/streaming-markdown-parser#readme",
+  "homepage": "https://github.com/laciferin2024/streaming-markdown-parser#readme",
   "devDependencies": {
     "rimraf": "^6.0.1",
     "typescript": "^5.0.4"
