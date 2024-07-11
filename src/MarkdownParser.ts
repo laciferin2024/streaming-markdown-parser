@@ -114,12 +114,22 @@ const mdMap = {
   "-": "<li>",
   // TODO: ``: should be <pre></pre>
 }
+// this method is too labourous, lets try css way:
 
 function addToken(token: string) {
   console.log({ token })
   if (!currentContainer) return
 
   const span = document.createElement("span")
+
+  // Check for heading
+  if (token.startsWith("#")) {
+    currentLineType = "heading"
+    span.classList.add("heading", `h${token.length.toString()}`) // Adjust heading level based on # count
+  } else {
+    currentLineType = null
+  }
+
   span.innerText = token
 
   currentContainer.appendChild(span)
