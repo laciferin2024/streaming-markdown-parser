@@ -130,6 +130,16 @@ function addToken(token: string) {
     currentLineType = null
   }
 
+  if (token === "```") {
+    if (currentLineType === "code") {
+      currentLineType = null
+      span.classList.remove("code")
+    } else {
+      currentLineType = "code"
+      span.classList.add("code")
+      // TODO: code class
+    }
+  }
   span.innerText = token
 
   currentContainer.appendChild(span)
