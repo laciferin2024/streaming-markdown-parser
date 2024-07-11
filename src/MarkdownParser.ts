@@ -130,7 +130,7 @@ function addToken(token: string) {
     currentLineType = null
   }
 
-  if (token === "```") {
+  if (token.startsWith("```")) {
     if (currentLineType === "code") {
       currentLineType = null
       span.classList.remove("code")
@@ -140,6 +140,27 @@ function addToken(token: string) {
       // TODO: code class
     }
   }
+
+  if (token.startsWith("**")) {
+    if (currentLineType === "italic") {
+      currentLineType = null
+      span.classList.remove("italic")
+    } else {
+      currentLineType = "italic"
+      span.classList.add("i")
+    }
+  }
+
+  if (token.startsWith("*") && token[1] != "*") {
+    if (currentLineType === "bold") {
+      currentLineType = null
+      span.classList.remove("font-bold")
+    } else {
+      currentLineType = "bold"
+      span.classList.add("font-bold")
+    }
+  }
+
   span.innerText = token
 
   currentContainer.appendChild(span)
