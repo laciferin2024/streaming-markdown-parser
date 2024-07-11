@@ -4,7 +4,7 @@
   "description": "Task: Make a streaming Markdown parser.",
   "main": "index.js",
   "scripts": {
-    "dev": "npx tsc --watch",
+    "dev": "npx tsc --watch --outDir ./public",
     "start": "vite public/ --port 8080",
     "build": "npx tsc; npm run build:cp-public",
     "build:cp-public": "cp ./public/** ./dist",
