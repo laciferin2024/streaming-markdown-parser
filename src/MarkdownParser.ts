@@ -125,7 +125,7 @@ function addToken(token: string) {
   // Check for heading
   if (token.startsWith("#")) {
     currentLineType = "heading"
-    span.classList.add(`h-${token.length.toString()}`) // Adjust heading level based on # count
+    span.classList.add(`h-${token.length.toString()}`)
   } else {
     currentLineType = null
   }
