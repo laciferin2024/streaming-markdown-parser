@@ -24,5 +24,8 @@
   "devDependencies": {
     "rimraf": "^6.0.1",
     "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "markdown-to-html": "^0.0.13"
   }
 }
