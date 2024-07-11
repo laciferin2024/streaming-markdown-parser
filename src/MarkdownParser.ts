@@ -59,7 +59,7 @@ function runStream() {
   // this randomly split the markdown into tokens between 2 and 20 characters long
   // simulates the behavior of an ml model thats giving you weirdly chunked tokens
   const tokens: string[] = []
-  let remainingMarkdown = blogpostMarkdown
+  let remainingMarkdown = blogPostMarkdown
   while (remainingMarkdown.length > 0) {
     const tokenLength = Math.floor(Math.random() * 18) + 2
     const token = remainingMarkdown.slice(0, tokenLength)
