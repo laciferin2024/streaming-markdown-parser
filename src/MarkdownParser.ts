@@ -78,15 +78,24 @@ function runStream() {
 }
 
 // dont be afraid of using globals for state
+let currentLineType: string | null = null
 
 /*YOUR CODE HERE
 this does token streaming with no styling right now
 your job is to write the parsing logic to make the styling work
  */
-// @ts-ignore
-// import { Markdown } from "markdown-to-html"
 
-// let md = new Markdown()
+// i need to parse the content manually
+enum LineType {
+  BOLD,
+  HEADING_1,
+  HEADING_2,
+  HEADING_3,
+  HEADING_4,
+  CODEBLOCK,
+  UL,
+  OL,
+}
 
 function addToken(token: string) {
   console.log({ token })
@@ -94,5 +103,6 @@ function addToken(token: string) {
 
   const span = document.createElement("span")
   span.innerText = token
+
   currentContainer.appendChild(span)
 }
