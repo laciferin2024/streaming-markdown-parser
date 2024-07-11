@@ -1,4 +1,4 @@
-const blogpostMarkdown = `# control
+const blogPostMarkdown: string = `# control
 
 *humans should focus on bigger problems*
 
@@ -49,32 +49,32 @@ git push origin build-todesktop
 
 - Wait for 14 minutes for gulp and ~30 minutes for todesktop
 - Go to todesktop.com, test the build locally and hit release
-`;
+`
 
-let currentContainer: HTMLElement | null = null; 
+let currentContainer: HTMLElement | null = null
 // Do not edit this method
 function runStream() {
-    currentContainer = document.getElementById('markdownContainer')!;
+  currentContainer = document.getElementById("markdownContainer")!
 
-    // this randomly split the markdown into tokens between 2 and 20 characters long
-    // simulates the behavior of an ml model thats giving you weirdly chunked tokens
-    const tokens: string[] = [];
-    let remainingMarkdown = blogpostMarkdown;
-    while (remainingMarkdown.length > 0) {
-        const tokenLength = Math.floor(Math.random() * 18) + 2;
-        const token = remainingMarkdown.slice(0, tokenLength);
-        tokens.push(token);
-        remainingMarkdown = remainingMarkdown.slice(tokenLength);
+  // this randomly split the markdown into tokens between 2 and 20 characters long
+  // simulates the behavior of an ml model thats giving you weirdly chunked tokens
+  const tokens: string[] = []
+  let remainingMarkdown = blogpostMarkdown
+  while (remainingMarkdown.length > 0) {
+    const tokenLength = Math.floor(Math.random() * 18) + 2
+    const token = remainingMarkdown.slice(0, tokenLength)
+    tokens.push(token)
+    remainingMarkdown = remainingMarkdown.slice(tokenLength)
+  }
+
+  const toCancel = setInterval(() => {
+    const token = tokens.shift()
+    if (token) {
+      addToken(token)
+    } else {
+      clearInterval(toCancel)
     }
-
-    const toCancel = setInterval(() => {
-        const token = tokens.shift();
-        if (token) {
-            addToken(token);
-        } else {
-            clearInterval(toCancel);
-        }
-    }, 20);
+  }, 20)
 }
 
 // dont be afraid of using globals for state
@@ -84,9 +84,9 @@ this does token streaming with no styling right now
 your job is to write the parsing logic to make the styling work
  */
 function addToken(token: string) {
-    if(!currentContainer) return;
+  if (!currentContainer) return
 
-    const span = document.createElement('span');
-    span.innerText = token;
-    currentContainer.appendChild(span);
+  const span = document.createElement("span")
+  span.innerText = token
+  currentContainer.appendChild(span)
 }
