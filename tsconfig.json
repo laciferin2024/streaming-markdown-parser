@@ -2,7 +2,7 @@
   "compilerOptions": {
     "allowJs": true,            
     "checkJs": true,
-    "outDir": "dist",
+    "outDir": "public",
     "sourceMap": true,
     "target": "ES6",
     "noImplicitAny": true,
