@@ -79,6 +79,7 @@ function runStream() {
 
 // dont be afraid of using globals for state
 let currentLineType: string | null = null
+let symbolStore: string = ""
 
 /*YOUR CODE HERE
 this does token streaming with no styling right now
@@ -108,6 +109,9 @@ const mdMap = {
   "####": "<h4>",
 
   "```": "<code>",
+
+  "1": "<li>",
+  "-": "<li>",
   // TODO: ``: should be <pre></pre>
 }
 
